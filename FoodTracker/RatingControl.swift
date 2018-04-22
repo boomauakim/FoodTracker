@@ -75,7 +75,7 @@ import UIKit
     for index in 0..<starCount {
       // Create the button.
       let button = UIButton()
-
+      
       // Set the button images.
       button.setImage(emptyStar, for: .normal)
       button.setImage(filledStar, for: .selected)

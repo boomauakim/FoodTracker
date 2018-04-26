@@ -11,10 +11,10 @@ import os.log
 
 class MealTableViewController: UITableViewController {
   
-  //MARK: Properties
+  // MARK: Properties
   var meals = [Meal]()
   
-  //MARK: Initialization
+  // MARK: Initialization
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -31,7 +31,7 @@ class MealTableViewController: UITableViewController {
     navigationItem.leftBarButtonItem = editButtonItem
   }
   
-  //MARK: Private Methods
+  // MARK: Private Methods
   private func loadSampleMeals() {
     let photo1 = UIImage(named: "meal1")
     let photo2 = UIImage(named: "meal2")
@@ -67,7 +67,7 @@ class MealTableViewController: UITableViewController {
     return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
   }
   
-  //MARK: Actions
+  // MARK: Actions
   @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
     if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
       if let selectedIndexPath = tableView.indexPathForSelectedRow {
@@ -87,7 +87,7 @@ class MealTableViewController: UITableViewController {
     }
   }
   
-  //MARK: Methods
+  // MARK: Methods
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
@@ -130,7 +130,7 @@ class MealTableViewController: UITableViewController {
     }
   }
   
-  //MARK: Navigation
+  // MARK: Navigation
   // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "ShowDetail" {

@@ -22,6 +22,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
    */
   var meal: Meal?
   
+  // MARK: Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -44,6 +45,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     // Hide the keyboard.
     textField.resignFirstResponder()
+    
     return true
   }
   
@@ -87,7 +89,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     dismiss(animated: true, completion: nil)
   }
   
-  //MARK: Navigation
+  // MARK: Navigation
   @IBAction func cancel(_ sender: UIBarButtonItem) {
     // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
     let isPresentingInAddMealMode = presentingViewController is UINavigationController
@@ -110,6 +112,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     // Configure the destination view controller only when the save button is pressed.
     guard let button = sender as? UIBarButtonItem, button == saveButton else {
       os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+      
       return
     }
     
@@ -121,7 +124,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     meal = Meal(name: name, photo: photo, rating: rating)
   }
   
-  //MARK: Private Methods
+  // MARK: Private Methods
   private func updateSaveButtonState() {
     // Disable the Save button if the next field is empty.
     let text = nameTextField.text ?? ""

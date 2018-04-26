@@ -10,7 +10,8 @@ import XCTest
 @testable import FoodTracker
 
 class FoodTrackerTests: XCTestCase {
-  //MARK: Meal Class Tests
+  
+  // MARK: Meal Class Tests
   // Confirm that the Meal initializer returns a Meal object when passed valid parameters.
   func testMealInitializtionSucceeds() {
     // Zero rating.
@@ -35,6 +36,5 @@ class FoodTrackerTests: XCTestCase {
     // Rating exceeds maximum
     let largeRatingMeal = Meal.init(name: "Large", photo: nil, rating: 6)
     XCTAssertNil(largeRatingMeal)
-    
   }
 }

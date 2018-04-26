@@ -21,7 +21,9 @@ import UIKit
       setupButtons()
     }
   }
+  
   private var ratingButtons = [UIButton]()
+  
   var rating = 0 {
     didSet {
       updateButtonSelectionStates()
@@ -39,7 +41,7 @@ import UIKit
     setupButtons()
   }
   
-  //MARK: Button Action
+  // MARK: Button Action
   @objc func ratingButtonTapped(button: UIButton) {
     guard let index = ratingButtons.index(of: button) else {
       fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
@@ -57,7 +59,7 @@ import UIKit
     }
   }
   
-  //MARK: Private Methods
+  // MARK: Private Methods
   private func setupButtons(){
     // Clear any existing buttons.
     for button in ratingButtons {
